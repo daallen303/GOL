@@ -4,12 +4,12 @@
 using namespace std;
 
 
-struct Cell{
+/*struct Cell{
 	char status;
 	int count;
 };
 
-
+*/
 /*
 char getStatus()
 {
@@ -65,7 +65,7 @@ void checkAdjCells(int rows, int cols, int cIndex, Cell A[])
 	}
 */
 __global__
-void callCheck(int rows, int cols,Cell A[])
+void callCheck(int rows, int cols,char A[], int B[])
 {
 	int i, k, j, count, iIndex, jIndex;
 	char newStat;
@@ -83,11 +83,11 @@ void callCheck(int rows, int cols,Cell A[])
 					{
 						// i<0 can't have negative index
 						//i>rows j > cols can't have index larger than array Max
-						if(k>=0 && k<=rows && j >=0 && j<= cols && A[i*cols+j].status == 'X' && (k*cols+j!= i)) count++;
+						if(k>=0 && k<=rows && j >=0 && j<= cols && A[k*cols+j] == 'X' && (k*cols+j!= i)) count++;
 					}
 				}
-				A[i].count = count;
-				newStat = A[i].status;
+				B[i] = count;
+				newStat = A[i];
 						if(newStat == 'X') //check if it's alive
 						{
 						if(count < 2) newStat = '-';//dead less than 2 living neighbours
@@ -97,10 +97,9 @@ void callCheck(int rows, int cols,Cell A[])
 						else{
 							if(count == 3) newStat = 'X'; // dead to alive
 						}
-				A[i].status = newStat;
+				A[i] = newStat;
 			}
 }	
-
 
 int main()
 {
@@ -109,8 +108,9 @@ int main()
 	int i,j, cIndex;
 	char temp;
 	
-	Cell *A;
-	cudaMallocManaged(&A, rows*cols*(8)); //allocates bytes from device heap and returns pointer to allocated memory or null
+	// two sepreate array coalesced reads cuda
+	char S[rows*cols];
+	int C[rows*cols];
 	ifstream fin;
 	fin.open("./input.txt");
 	
@@ -119,18 +119,53 @@ int main()
 		{   
 			fin >> temp;
 			cIndex = i*cols+j;
-			A[cIndex].status = temp;
-			A[cIndex].count = 0;
+			S[cIndex]= temp;
+			C[cIndex] = 0;
+			cout << i*cols+j << " index " << S[cIndex] << " = status " << C[cIndex] << " = count" << endl;
 			//cout << A[i *cols + j].getStatus();
 		}
-	
-	callCheck<<<1,1>>>(rows, cols, A);
-	cudaDeviceSynchronize();
-	cudaFree(A);
+	fin.close();
+	char *A;
+	int *B;
+	cudaMalloc(&A, rows*cols*(sizeof(int)));
+	cudaMalloc(&B, rows*cols*(sizeof(int)));//allocates bytes from device heap and returns pointer to allocated memory or null
+	for(i = 0; i < rows; i++)
+	{
+			for(j = 0; j<cols; j++)
+			{   
+				cudaMemcpy(&A[i*cols+j], &S[i*cols+j], sizeof(char), cudaMemcpyHostToDevice);
+				cudaMemcpy(&B[i*cols+j], &C[i*cols+j], sizeof(int), cudaMemcpyHostToDevice);
+			}
+
 				//	A[23].setCount(checkAdjCells(rows,cols,23, A));
 				//	cout << "Status " << A[23].getStatus() << " Count" << A[23].getCount();
-	fin.close();
-cin.get();
+	}
+	int l = 0;
+	while(l< 10){
+		        //     <<<number of blocks, number of threads per block>>>
+	callCheck<<<1,100>>>(rows, cols, A, B);
+	cudaDeviceSynchronize();
+	for(i = 0; i < rows; i++)
+		{
+				
+				for(j = 0; j<cols; j++)
+				{   
+					
+					cudaMemcpy(&S[i*cols+j], &A[i*cols+j], sizeof(char), cudaMemcpyDeviceToHost);
+					cudaMemcpy(&C[i*cols+j], &B[i*cols+j], sizeof(int), cudaMemcpyDeviceToHost);
+					//cout << i*cols+j << " index " << S[i*cols+j] << " status " << C[i*cols+j] << " count " << endl;
+					cout << S[i*cols+j] << " ";
+				}
+				cout << endl;
+					//	A[23].setCount(checkAdjCells(rows,cols,23, A));
+					//	cout << "Status " << A[23].getStatus() << " Count" << A[23].getCount();
+		}
+	l++;
+	}
+	cudaFree(A);
+	cudaFree(B);
+	
+	cin.get();
 	//cudaMallocManaged(sizeof(char)*rows*cols);
 	//cudaMemcpy(hostToDevice)
 
