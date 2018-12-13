@@ -46,6 +46,8 @@ int main()
 	char S[rows*cols];
 	int C[rows*cols];
 	ifstream fin;
+	ofstream fout;
+	fout.open("output.txt");
 	fin.open("./input.txt");
 	
 	for(i = 0; i < rows; i++)
@@ -59,7 +61,7 @@ int main()
 			
 			//cout << A[i *cols + j].getStatus();
 		}
-		cout << endl;
+		fout << endl;
 	}
 	
 	char *A;
@@ -78,7 +80,7 @@ int main()
 				//	cout << "Status " << A[23].getStatus() << " Count" << A[23].getCount();
 	}
 	int l = 0;
-	while(l< 10){
+	while(l< 5){
 		        //     <<<number of blocks, number of threads per block>>>
 	callCheck<<<1,100>>>(rows, cols, A, B);
 	cudaDeviceSynchronize();
@@ -91,14 +93,14 @@ int main()
 					cudaMemcpy(&S[i*cols+j], &A[i*cols+j], sizeof(char), cudaMemcpyDeviceToHost);
 					cudaMemcpy(&C[i*cols+j], &B[i*cols+j], sizeof(int), cudaMemcpyDeviceToHost);
 					//cout << i*cols+j << " index " << S[i*cols+j] << " status " << C[i*cols+j] << " count " << endl;
-					cout << S[i*cols+j];
+					fout << S[i*cols+j];
 				}
-				cout << endl;
+				fout << endl;
 					//	A[23].setCount(checkAdjCells(rows,cols,23, A));
 					//	cout << "Status " << A[23].getStatus() << " Count" << A[23].getCount();
 		}
-	cout << endl;
-	cout << endl;
+	fout << endl;
+	fout << endl;
 	l++;
 	}
 	cudaFree(A);
