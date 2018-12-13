@@ -1,14 +1,17 @@
 #include <iostream>
 #include <fstream>
+#include <vector>
 
 using namespace std;
 
+const int THREADS_PER_BLOCK = 512;
 
 __global__
 void callCheck(int rows, int cols,char A[], int B[])
 {
 	int i, k, j, count, iIndex, jIndex;
-    i = blockIdx.x * blockDim.x + threadIdx.x; //index of current thread
+    i = blockIdx.x * blockDim.x + threadIdx.x;
+    int rowIndex, colIndex;//index of current thread
 	//int stride = blockDim.x *gridDim.x; total threads grid striping 
 				//checkAdjCells(rows,cols, k, A);
 				iIndex = i/cols; //row index
@@ -20,7 +23,13 @@ void callCheck(int rows, int cols,char A[], int B[])
 					{
 						// i<0 can't have negative index
 						//i>rows j > cols can't have index larger than array Max
-						if(k>=0 && k<=rows && j >=0 && j<= cols && A[k*cols+j] == 'X' && (k*cols+j!= i)) count++;
+						if(k<0) rowIndex = rows;
+						else if(k>rows)rowIndex = 0;
+						else rowIndex = k;
+						if(j<0) colIndex = cols;
+						else if(j>cols) colIndex = 0;
+						else colIndex = j;
+						if (A[rowIndex*cols+colIndex] == 'X' && (rowIndex*cols+colIndex!= i)) count++;
 					}
 				}
 									B[i] = count;
@@ -37,31 +46,28 @@ void callCheck(int rows, int cols,char A[], int B[])
 
 int main()
 {
-	int rows = 10;
-	int cols = 10;
-	int i,j, cIndex;
+	int i,j, rows, cols;
 	char temp;
-	
+	rows = 1;
+	cols = 1;
 	// two sepreate array coalesced reads cuda
-	char S[rows*cols];
-	int C[rows*cols];
+	vector <char> S;
+	vector <int> C;
 	ifstream fin;
 	ofstream fout;
-	fout.open("output.txt");
 	fin.open("./input.txt");
-	
-	for(i = 0; i < rows; i++)
+	fout.open("output.txt");
+	fin >> temp;
+	while(!fin.eof())
 	{
-		for(j = 0; j<cols; j++)
-		{   
-			fin >> temp;
-			cIndex = i*cols+j;
-			S[cIndex]= temp;
-			C[cIndex]= -1;
-			
-			//cout << A[i *cols + j].getStatus();
-		}
-		fout << endl;
+		if(fin.peek() == '\n')rows++;
+		else if(rows == 1)cols++;
+		if(temp == 'X' || temp == '-')
+		{
+			S.push_back(temp); //read in status
+			C.push_back(-1); //initialize count of Adjcells
+		}else cout << "Invalid input = " << temp << endl;
+		fin >> temp;
 	}
 	
 	char *A;
@@ -75,14 +81,11 @@ int main()
 				cudaMemcpy(&A[i*cols+j], &S[i*cols+j], sizeof(char), cudaMemcpyHostToDevice);
 				cudaMemcpy(&B[i*cols+j], &C[i*cols+j], sizeof(int), cudaMemcpyHostToDevice);
 			}
-
-				//	A[23].setCount(checkAdjCells(rows,cols,23, A));
-				//	cout << "Status " << A[23].getStatus() << " Count" << A[23].getCount();
 	}
 	int l = 0;
 	while(l< 5){
-		        //     <<<number of blocks, number of threads per block>>>
-	callCheck<<<1,100>>>(rows, cols, A, B);
+ //     <<<number of blocks, number of threads per block>>>
+	callCheck<<<cols*rows/THREADS_PER_BLOCK+1,THREADS_PER_BLOCK>>>(rows, cols, A, B); // one block of rows*cols threads
 	cudaDeviceSynchronize();
 	for(i = 0; i < rows; i++)
 		{
@@ -92,12 +95,9 @@ int main()
 					
 					cudaMemcpy(&S[i*cols+j], &A[i*cols+j], sizeof(char), cudaMemcpyDeviceToHost);
 					cudaMemcpy(&C[i*cols+j], &B[i*cols+j], sizeof(int), cudaMemcpyDeviceToHost);
-					//cout << i*cols+j << " index " << S[i*cols+j] << " status " << C[i*cols+j] << " count " << endl;
 					fout << S[i*cols+j];
 				}
 				fout << endl;
-					//	A[23].setCount(checkAdjCells(rows,cols,23, A));
-					//	cout << "Status " << A[23].getStatus() << " Count" << A[23].getCount();
 		}
 	fout << endl;
 	fout << endl;
@@ -105,10 +105,8 @@ int main()
 	}
 	cudaFree(A);
 	cudaFree(B);
-	
+	cout << "All Done";
 	cin.get();
-	//cudaMallocManaged(sizeof(char)*rows*cols);
-	//cudaMemcpy(hostToDevice)
 
 }
 

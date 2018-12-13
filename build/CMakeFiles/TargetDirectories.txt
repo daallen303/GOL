@@ -1,0 +1,3 @@
+/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/edit_cache.dir
+/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/rebuild_cache.dir
+/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/GOL.dir
