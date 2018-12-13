@@ -4,39 +4,6 @@
 using namespace std;
 
 
-int checkAdjCells(int rows, int cols, int cIndex, char A[])
-	{
-		int i, j, iIndex, jIndex, count = 0;
-		iIndex = cIndex/cols; //row index
-		jIndex = cIndex%cols; // col index
-		for(i = iIndex-1; i <= iIndex+1; i++)
-		{
-			for (j = jIndex-1; j <= jIndex+1; j++) //Each line ends with newline character \n (Unix formatting)
-			{
-				// i<0 can't have negative index
-				//i>rows j > cols can't have index larger than array Max
-				if(i>=0 && i<=rows && j >=0 && j<= cols && A[i*cols+j] == 'X' && (i*cols+j!= cIndex)) count++;
-			}
-		}
-		return count;
-	}
-
-char setStatus(int num, char status) //Each line ends with newline character \n (Unix formatting)
-{
-		//cout << num << " ";
-		char newStat = status;
-		if(status == 'X') //check if it's alive
-		{
-		if(num < 2) newStat = '-';//dead less than 2 living neighbours
-		else if(num <= 3) newStat = 'X'; //do nothing status is already alive
-		else newStat = '-';//dead greater than 3 living neighbours
-		}
-		else{
-			if(num == 3) newStat = 'X'; // dead to alive
-		}
-		return newStat;
-}
-
 __global__
 void callCheck(int rows, int cols,char A[], int B[])
 {
@@ -149,8 +116,40 @@ int main()
 	int count;
 };
 
-*/
-/*
+
+int checkAdjCells(int rows, int cols, int cIndex, char A[])
+	{
+		int i, j, iIndex, jIndex, count = 0;
+		iIndex = cIndex/cols; //row index
+		jIndex = cIndex%cols; // col index
+		for(i = iIndex-1; i <= iIndex+1; i++)
+		{
+			for (j = jIndex-1; j <= jIndex+1; j++) //Each line ends with newline character \n (Unix formatting)
+			{
+				// i<0 can't have negative index
+				//i>rows j > cols can't have index larger than array Max
+				if(i>=0 && i<=rows && j >=0 && j<= cols && A[i*cols+j] == 'X' && (i*cols+j!= cIndex)) count++;
+			}
+		}
+		return count;
+	}
+
+char setStatus(int num, char status) //Each line ends with newline character \n (Unix formatting)
+{
+		//cout << num << " ";
+		char newStat = status;
+		if(status == 'X') //check if it's alive
+		{
+		if(num < 2) newStat = '-';//dead less than 2 living neighbours
+		else if(num <= 3) newStat = 'X'; //do nothing status is already alive
+		else newStat = '-';//dead greater than 3 living neighbours
+		}
+		else{
+			if(num == 3) newStat = 'X'; // dead to alive
+		}
+		return newStat;
+}
+
 char getStatus()
 {
 	return status;
