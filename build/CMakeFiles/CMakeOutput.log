@@ -1,4 +1,17 @@
 The system is: Linux - 4.15.0-42-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/3.5.1/CompilerIdC/a.out"
+
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
 Build flags: 
@@ -10,33 +23,218 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/3.5.1/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/3.5.1/CompilerIdCXX/a.out"
 
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f4996/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f4996.dir/build.make CMakeFiles/cmTC_f4996.dir/build
+make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f4996.dir/testCCompiler.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_f4996.dir/testCCompiler.c.o   -c /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_f4996
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f4996.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_f4996.dir/testCCompiler.c.o  -o cmTC_f4996 -rdynamic 
+make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ae661/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ae661.dir/build.make CMakeFiles/cmTC_ae661.dir/build
+make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ae661.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_ae661.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_ae661
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ae661.dir/link.txt --verbose=1
+/usr/bin/cc      -v CMakeFiles/cmTC_ae661.dir/CMakeCCompilerABI.c.o  -o cmTC_ae661 -rdynamic  
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.4.0-6ubuntu1~16.04.10' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ae661' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVGnMSw.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_ae661 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_ae661.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_ae661/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_ae661.dir/build.make CMakeFiles/cmTC_ae661.dir/build]
+  ignore line: [make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_ae661.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_ae661.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_ae661]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ae661.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_ae661.dir/CMakeCCompilerABI.c.o  -o cmTC_ae661 -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.4.0-6ubuntu1~16.04.10' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ae661' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVGnMSw.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_ae661 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_ae661.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccVGnMSw.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--sysroot=/] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_ae661] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..]
+    arg [CMakeFiles/cmTC_ae661.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5] ==> [/usr/lib/gcc/x86_64-linux-gnu/5]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> [/usr/lib]
+  implicit libs: [c]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/5;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+  implicit fwks: []
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_cf3f0/fast"
+/usr/bin/make -f CMakeFiles/cmTC_cf3f0.dir/build.make CMakeFiles/cmTC_cf3f0.dir/build
+make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cf3f0.dir/feature_tests.c.o
+/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_cf3f0.dir/feature_tests.c.o   -c /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_cf3f0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cf3f0.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_cf3f0.dir/feature_tests.c.o  -o cmTC_cf3f0 -rdynamic 
+make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4590f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_4590f.dir/build.make CMakeFiles/cmTC_4590f.dir/build
+make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4590f.dir/feature_tests.c.o
+/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_4590f.dir/feature_tests.c.o   -c /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_4590f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4590f.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_4590f.dir/feature_tests.c.o  -o cmTC_4590f -rdynamic 
+make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b42b7/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b42b7.dir/build.make CMakeFiles/cmTC_b42b7.dir/build
+make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b42b7.dir/feature_tests.c.o
+/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_b42b7.dir/feature_tests.c.o   -c /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_b42b7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b42b7.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_b42b7.dir/feature_tests.c.o  -o cmTC_b42b7 -rdynamic 
+make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp
+Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_20282/fast"
-/usr/bin/make -f CMakeFiles/cmTC_20282.dir/build.make CMakeFiles/cmTC_20282.dir/build
-make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_20282.dir/testCXXCompiler.cxx.o
-/usr/bin/c++      -o CMakeFiles/cmTC_20282.dir/testCXXCompiler.cxx.o -c /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_20282
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_20282.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_20282.dir/testCXXCompiler.cxx.o  -o cmTC_20282 -rdynamic 
-make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_5fa42/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5fa42.dir/build.make CMakeFiles/cmTC_5fa42.dir/build
+make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5fa42.dir/testCXXCompiler.cxx.o
+/usr/bin/c++      -o CMakeFiles/cmTC_5fa42.dir/testCXXCompiler.cxx.o -c /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_5fa42
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5fa42.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_5fa42.dir/testCXXCompiler.cxx.o  -o cmTC_5fa42 -rdynamic 
+make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp
+Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_03564/fast"
-/usr/bin/make -f CMakeFiles/cmTC_03564.dir/build.make CMakeFiles/cmTC_03564.dir/build
-make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_03564.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++      -o CMakeFiles/cmTC_03564.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_03564
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_03564.dir/link.txt --verbose=1
-/usr/bin/c++       -v CMakeFiles/cmTC_03564.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_03564 -rdynamic  
+Run Build Command:"/usr/bin/make" "cmTC_84fc7/fast"
+/usr/bin/make -f CMakeFiles/cmTC_84fc7.dir/build.make CMakeFiles/cmTC_84fc7.dir/build
+make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_84fc7.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++      -o CMakeFiles/cmTC_84fc7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_84fc7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_84fc7.dir/link.txt --verbose=1
+/usr/bin/c++       -v CMakeFiles/cmTC_84fc7.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_84fc7 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
@@ -46,23 +244,23 @@ Thread model: posix
 gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_03564' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccw6nGdA.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_03564 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_03564.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
-make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_84fc7' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccpMf11J.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_84fc7 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_84fc7.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_03564/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_03564.dir/build.make CMakeFiles/cmTC_03564.dir/build]
-  ignore line: [make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_03564.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++      -o CMakeFiles/cmTC_03564.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_03564]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_03564.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTC_03564.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_03564 -rdynamic  ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_84fc7/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_84fc7.dir/build.make CMakeFiles/cmTC_84fc7.dir/build]
+  ignore line: [make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_84fc7.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++      -o CMakeFiles/cmTC_84fc7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_84fc7]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_84fc7.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTC_84fc7.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_84fc7 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper]
@@ -72,13 +270,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_03564' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccw6nGdA.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_03564 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_03564.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_84fc7' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccpMf11J.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_84fc7 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_84fc7.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccw6nGdA.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccpMf11J.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -96,7 +294,7 @@ Parsed CXX implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_03564] ==> ignore
+    arg [cmTC_84fc7] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o] ==> ignore
@@ -108,7 +306,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..]
-    arg [CMakeFiles/cmTC_03564.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_84fc7.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -138,17 +336,17 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp
+Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_cce7f/fast"
-/usr/bin/make -f CMakeFiles/cmTC_cce7f.dir/build.make CMakeFiles/cmTC_cce7f.dir/build
-make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_cce7f.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++14 -o CMakeFiles/cmTC_cce7f.dir/feature_tests.cxx.o -c /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_cce7f
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cce7f.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_cce7f.dir/feature_tests.cxx.o  -o cmTC_cce7f -rdynamic 
-make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_32e86/fast"
+/usr/bin/make -f CMakeFiles/cmTC_32e86.dir/build.make CMakeFiles/cmTC_32e86.dir/build
+make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_32e86.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++14 -o CMakeFiles/cmTC_32e86.dir/feature_tests.cxx.o -c /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_32e86
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_32e86.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_32e86.dir/feature_tests.cxx.o  -o cmTC_32e86 -rdynamic 
+make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -211,17 +409,17 @@ make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp
+Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_486a5/fast"
-/usr/bin/make -f CMakeFiles/cmTC_486a5.dir/build.make CMakeFiles/cmTC_486a5.dir/build
-make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_486a5.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_486a5.dir/feature_tests.cxx.o -c /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_486a5
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_486a5.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_486a5.dir/feature_tests.cxx.o  -o cmTC_486a5 -rdynamic 
-make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_34359/fast"
+/usr/bin/make -f CMakeFiles/cmTC_34359.dir/build.make CMakeFiles/cmTC_34359.dir/build
+make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_34359.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_34359.dir/feature_tests.cxx.o -c /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_34359
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_34359.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_34359.dir/feature_tests.cxx.o  -o cmTC_34359 -rdynamic 
+make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -284,17 +482,17 @@ make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp
+Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_de66b/fast"
-/usr/bin/make -f CMakeFiles/cmTC_de66b.dir/build.make CMakeFiles/cmTC_de66b.dir/build
-make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_de66b.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_de66b.dir/feature_tests.cxx.o -c /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_de66b
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_de66b.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_de66b.dir/feature_tests.cxx.o  -o cmTC_de66b -rdynamic 
-make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_7ee77/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7ee77.dir/build.make CMakeFiles/cmTC_7ee77.dir/build
+make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_7ee77.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_7ee77.dir/feature_tests.cxx.o -c /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_7ee77
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7ee77.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_7ee77.dir/feature_tests.cxx.o  -o cmTC_7ee77 -rdynamic 
+make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -354,229 +552,31 @@ make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles
     Feature record: CXX_FEATURE:0cxx_variable_templates
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
-Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler: /usr/bin/cc 
-Build flags: 
-Id flags: 
-
-The output was:
-0
-
-
-Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
-
-The C compiler identification is GNU, found in "/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/3.5.1/CompilerIdC/a.out"
-
-Determining if the C compiler works passed with the following output:
-Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/make" "cmTC_68f24/fast"
-/usr/bin/make -f CMakeFiles/cmTC_68f24.dir/build.make CMakeFiles/cmTC_68f24.dir/build
-make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_68f24.dir/testCCompiler.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_68f24.dir/testCCompiler.c.o   -c /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_68f24
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_68f24.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_68f24.dir/testCCompiler.c.o  -o cmTC_68f24 -rdynamic 
-make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
-
-
-Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/make" "cmTC_dac7b/fast"
-/usr/bin/make -f CMakeFiles/cmTC_dac7b.dir/build.make CMakeFiles/cmTC_dac7b.dir/build
-make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_dac7b.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_dac7b.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_dac7b
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dac7b.dir/link.txt --verbose=1
-/usr/bin/cc      -v CMakeFiles/cmTC_dac7b.dir/CMakeCCompilerABI.c.o  -o cmTC_dac7b -rdynamic  
-Using built-in specs.
-COLLECT_GCC=/usr/bin/cc
-COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
-Target: x86_64-linux-gnu
-Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.4.0-6ubuntu1~16.04.10' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
-Thread model: posix
-gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10) 
-COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
-LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_dac7b' '-rdynamic' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccxE2NUP.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_dac7b /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_dac7b.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
-make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
-
-
-Parsed C implicit link information from above output:
-  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp]
-  ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_dac7b/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_dac7b.dir/build.make CMakeFiles/cmTC_dac7b.dir/build]
-  ignore line: [make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_dac7b.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_dac7b.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_dac7b]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dac7b.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_dac7b.dir/CMakeCCompilerABI.c.o  -o cmTC_dac7b -rdynamic  ]
-  ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=/usr/bin/cc]
-  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper]
-  ignore line: [Target: x86_64-linux-gnu]
-  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.4.0-6ubuntu1~16.04.10' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
-  ignore line: [Thread model: posix]
-  ignore line: [gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10) ]
-  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/]
-  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_dac7b' '-rdynamic' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccxE2NUP.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_dac7b /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_dac7b.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
-    arg [/usr/lib/gcc/x86_64-linux-gnu/5/collect2] ==> ignore
-    arg [-plugin] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so] ==> ignore
-    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccxE2NUP.res] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
-    arg [-plugin-opt=-pass-through=-lc] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
-    arg [--sysroot=/] ==> ignore
-    arg [--build-id] ==> ignore
-    arg [--eh-frame-hdr] ==> ignore
-    arg [-m] ==> ignore
-    arg [elf_x86_64] ==> ignore
-    arg [--hash-style=gnu] ==> ignore
-    arg [--as-needed] ==> ignore
-    arg [-export-dynamic] ==> ignore
-    arg [-dynamic-linker] ==> ignore
-    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
-    arg [-zrelro] ==> ignore
-    arg [-o] ==> ignore
-    arg [cmTC_dac7b] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o] ==> ignore
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib]
-    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
-    arg [-L/lib/../lib] ==> dir [/lib/../lib]
-    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
-    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..]
-    arg [CMakeFiles/cmTC_dac7b.dir/CMakeCCompilerABI.c.o] ==> ignore
-    arg [-lgcc] ==> lib [gcc]
-    arg [--as-needed] ==> ignore
-    arg [-lgcc_s] ==> lib [gcc_s]
-    arg [--no-as-needed] ==> ignore
-    arg [-lc] ==> lib [c]
-    arg [-lgcc] ==> lib [gcc]
-    arg [--as-needed] ==> ignore
-    arg [-lgcc_s] ==> lib [gcc_s]
-    arg [--no-as-needed] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtend.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o] ==> ignore
-  remove lib [gcc]
-  remove lib [gcc_s]
-  remove lib [gcc]
-  remove lib [gcc_s]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5] ==> [/usr/lib/gcc/x86_64-linux-gnu/5]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib] ==> [/usr/lib]
-  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
-  collapse library dir [/lib/../lib] ==> [/lib]
-  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
-  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> [/usr/lib]
-  implicit libs: [c]
-  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/5;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
-  implicit fwks: []
-
-
-
-
-Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/make" "cmTC_37fe0/fast"
-/usr/bin/make -f CMakeFiles/cmTC_37fe0.dir/build.make CMakeFiles/cmTC_37fe0.dir/build
-make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_37fe0.dir/feature_tests.c.o
-/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_37fe0.dir/feature_tests.c.o   -c /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/feature_tests.c
-Linking C executable cmTC_37fe0
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_37fe0.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_37fe0.dir/feature_tests.c.o  -o cmTC_37fe0 -rdynamic 
-make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
-
-
-    Feature record: C_FEATURE:1c_function_prototypes
-    Feature record: C_FEATURE:1c_restrict
-    Feature record: C_FEATURE:1c_static_assert
-    Feature record: C_FEATURE:1c_variadic_macros
-
-
-Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/make" "cmTC_af8f1/fast"
-/usr/bin/make -f CMakeFiles/cmTC_af8f1.dir/build.make CMakeFiles/cmTC_af8f1.dir/build
-make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_af8f1.dir/feature_tests.c.o
-/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_af8f1.dir/feature_tests.c.o   -c /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/feature_tests.c
-Linking C executable cmTC_af8f1
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_af8f1.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_af8f1.dir/feature_tests.c.o  -o cmTC_af8f1 -rdynamic 
-make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
-
-
-    Feature record: C_FEATURE:1c_function_prototypes
-    Feature record: C_FEATURE:1c_restrict
-    Feature record: C_FEATURE:0c_static_assert
-    Feature record: C_FEATURE:1c_variadic_macros
-
-
-Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/make" "cmTC_43fae/fast"
-/usr/bin/make -f CMakeFiles/cmTC_43fae.dir/build.make CMakeFiles/cmTC_43fae.dir/build
-make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_43fae.dir/feature_tests.c.o
-/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_43fae.dir/feature_tests.c.o   -c /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/feature_tests.c
-Linking C executable cmTC_43fae
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_43fae.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_43fae.dir/feature_tests.c.o  -o cmTC_43fae -rdynamic 
-make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
-
-
-    Feature record: C_FEATURE:1c_function_prototypes
-    Feature record: C_FEATURE:0c_restrict
-    Feature record: C_FEATURE:0c_static_assert
-    Feature record: C_FEATURE:0c_variadic_macros
 Determining if the include file pthread.h exists passed with the following output:
-Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp
+Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_43cf7/fast"
-/usr/bin/make -f CMakeFiles/cmTC_43cf7.dir/build.make CMakeFiles/cmTC_43cf7.dir/build
-make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_43cf7.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -fPIC    -o CMakeFiles/cmTC_43cf7.dir/CheckIncludeFile.c.o   -c /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_43cf7
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_43cf7.dir/link.txt --verbose=1
-/usr/bin/cc  -fPIC     CMakeFiles/cmTC_43cf7.dir/CheckIncludeFile.c.o  -o cmTC_43cf7 -rdynamic 
-make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_cd012/fast"
+/usr/bin/make -f CMakeFiles/cmTC_cd012.dir/build.make CMakeFiles/cmTC_cd012.dir/build
+make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cd012.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -fPIC    -o CMakeFiles/cmTC_cd012.dir/CheckIncludeFile.c.o   -c /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_cd012
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cd012.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC     CMakeFiles/cmTC_cd012.dir/CheckIncludeFile.c.o  -o cmTC_cd012 -rdynamic 
+make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
-Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp
+Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_16611/fast"
-/usr/bin/make -f CMakeFiles/cmTC_16611.dir/build.make CMakeFiles/cmTC_16611.dir/build
-make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_16611.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_16611.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_16611
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_16611.dir/link.txt --verbose=1
-/usr/bin/cc  -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_16611.dir/CheckFunctionExists.c.o  -o cmTC_16611 -rdynamic -lpthread 
-make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_e151b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e151b.dir/build.make CMakeFiles/cmTC_e151b.dir/build
+make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e151b.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_e151b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e151b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e151b.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_e151b.dir/CheckFunctionExists.c.o  -o cmTC_e151b -rdynamic -lpthread 
+make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
 
 

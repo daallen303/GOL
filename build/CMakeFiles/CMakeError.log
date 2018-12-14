@@ -1,24 +1,24 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp
+Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_172c2/fast"
-/usr/bin/make -f CMakeFiles/cmTC_172c2.dir/build.make CMakeFiles/cmTC_172c2.dir/build
-make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_172c2.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -fPIC    -o CMakeFiles/cmTC_172c2.dir/CheckSymbolExists.c.o   -c /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_172c2
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_172c2.dir/link.txt --verbose=1
-/usr/bin/cc  -fPIC     CMakeFiles/cmTC_172c2.dir/CheckSymbolExists.c.o  -o cmTC_172c2 -rdynamic 
-CMakeFiles/cmTC_172c2.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:"/usr/bin/make" "cmTC_8f331/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8f331.dir/build.make CMakeFiles/cmTC_8f331.dir/build
+make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8f331.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -fPIC    -o CMakeFiles/cmTC_8f331.dir/CheckSymbolExists.c.o   -c /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_8f331
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8f331.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC     CMakeFiles/cmTC_8f331.dir/CheckSymbolExists.c.o  -o cmTC_8f331 -rdynamic 
+CMakeFiles/cmTC_8f331.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_172c2.dir/build.make:97: recipe for target 'cmTC_172c2' failed
-make[1]: *** [cmTC_172c2] Error 1
-make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_172c2/fast' failed
-make: *** [cmTC_172c2/fast] Error 2
+CMakeFiles/cmTC_8f331.dir/build.make:97: recipe for target 'cmTC_8f331' failed
+make[1]: *** [cmTC_8f331] Error 1
+make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_8f331/fast' failed
+make: *** [cmTC_8f331/fast] Error 2
 
-File /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -34,22 +34,22 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp
+Change Dir: /home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_14b28/fast"
-/usr/bin/make -f CMakeFiles/cmTC_14b28.dir/build.make CMakeFiles/cmTC_14b28.dir/build
-make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_14b28.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_14b28.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_14b28
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_14b28.dir/link.txt --verbose=1
-/usr/bin/cc  -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_14b28.dir/CheckFunctionExists.c.o  -o cmTC_14b28 -rdynamic -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTC_95162/fast"
+/usr/bin/make -f CMakeFiles/cmTC_95162.dir/build.make CMakeFiles/cmTC_95162.dir/build
+make[1]: Entering directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_95162.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_95162.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_95162
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_95162.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_95162.dir/CheckFunctionExists.c.o  -o cmTC_95162 -rdynamic -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_14b28.dir/build.make:97: recipe for target 'cmTC_14b28' failed
-make[1]: *** [cmTC_14b28] Error 1
-make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_14b28/fast' failed
-make: *** [cmTC_14b28/fast] Error 2
+CMakeFiles/cmTC_95162.dir/build.make:97: recipe for target 'cmTC_95162' failed
+make[1]: *** [cmTC_95162] Error 1
+make[1]: Leaving directory '/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_95162/fast' failed
+make: *** [cmTC_95162/fast] Error 2
 
 

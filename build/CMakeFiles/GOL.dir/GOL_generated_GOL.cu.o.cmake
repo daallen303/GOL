@@ -57,17 +57,17 @@ endif()
 # Set these up as variables to make reading the generated file easier
 set(CMAKE_COMMAND "/usr/bin/cmake") # path
 set(source_file "/home/dev-desktop/cuda-workspace/Cuda_GOL/GOL.cu") # path
-set(NVCC_generated_dependency_file "/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/GOL.dir//GOL_generated_GOL.cu.o.NVCC-depend") # path
-set(cmake_dependency_file "/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/GOL.dir//GOL_generated_GOL.cu.o.depend") # path
+set(NVCC_generated_dependency_file "/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/GOL.dir//GOL_generated_GOL.cu.o.NVCC-depend") # path
+set(cmake_dependency_file "/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/GOL.dir//GOL_generated_GOL.cu.o.depend") # path
 set(CUDA_make2cmake "/usr/share/cmake-3.5/Modules/FindCUDA/make2cmake.cmake") # path
 set(CUDA_parse_cubin "/usr/share/cmake-3.5/Modules/FindCUDA/parse_cubin.cmake") # path
 set(build_cubin OFF) # bool
 set(CUDA_HOST_COMPILER "/usr/bin/cc") # path
 # We won't actually use these variables for now, but we need to set this, in
 # order to force this file to be run again if it changes.
-set(generated_file_path "/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/GOL.dir//.") # path
-set(generated_file_internal "/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/GOL.dir//./GOL_generated_GOL.cu.o") # path
-set(generated_cubin_file_internal "/home/dev-desktop/cuda-workspace/Cuda_GOL/CMakeFiles/GOL.dir//./GOL_generated_GOL.cu.o.cubin.txt") # path
+set(generated_file_path "/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/GOL.dir//.") # path
+set(generated_file_internal "/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/GOL.dir//./GOL_generated_GOL.cu.o") # path
+set(generated_cubin_file_internal "/home/dev-desktop/cuda-workspace/Cuda_GOL/build/CMakeFiles/GOL.dir//./GOL_generated_GOL.cu.o.cubin.txt") # path
 
 set(CUDA_NVCC_EXECUTABLE "/usr/bin/nvcc") # path
 set(CUDA_NVCC_FLAGS  ;; ) # list
