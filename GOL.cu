@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <stdlib.h>
+#include <string>
 
 using namespace std;
 
@@ -23,16 +25,16 @@ void callCheck(int rows, int cols,char A[], int B[])
 					{
 						// i<0 can't have negative index
 						//i>rows j > cols can't have index larger than array Max
-						if(k<0) rowIndex = rows;
-						else if(k>rows)rowIndex = 0;
+						if(k<0) rowIndex = rows-1;
+						else if(k>=rows)rowIndex = 0;
 						else rowIndex = k;
-						if(j<0) colIndex = cols;
-						else if(j>cols) colIndex = 0;
+						if(j<0) colIndex = cols-1;
+						else if(j>=cols) colIndex = 0;
 						else colIndex = j;
 						if (A[rowIndex*cols+colIndex] == 'X' && (rowIndex*cols+colIndex!= i)) count++;
 					}
 				}
-									B[i] = count;
+									    B[i] = count;
 										if(A[i] == 'X') //check if it's alive
 										{
 										if(B[i] < 2) A[i] = '-';//dead less than 2 living neighbours
@@ -44,68 +46,114 @@ void callCheck(int rows, int cols,char A[], int B[])
 										}
 }	
 
-int main()
+int main(int argc, char *argv[])
 {
 	int i,j, rows, cols;
-	char temp;
+	char temp = '=';
 	rows = 1;
 	cols = 1;
-	// two sepreate array coalesced reads cuda
-	vector <char> S;
-	vector <int> C;
+	// two sepreate array coalesced reads cudachar S[rows*cols];
+	vector<char> tempS;
 	ifstream fin;
 	ofstream fout;
-	fin.open("./input.txt");
+	bool printAll = false;
+		int opts = 0;
+		string input;
+		int iterations = 1;
+		while(opts < argc)
+		{
+			if(string(argv[opts]) == "-i") iterations = strtol(argv[opts+1], NULL, 10);
+			if(string(argv[opts]) == "-v") printAll = true;
+			if(opts == argc-1){
+				string ext;
+				string temp = argv[opts];
+				for(i = temp.length()-4; i < temp.length(); i++) ext += temp[i];
+				if(ext == ".txt") input = temp;
+			}
+			opts++;
+		}
+	fin.open(input.c_str());
+	if(fin){
 	fout.open("output.txt");
+	i=0;
 	fin >> temp;
 	while(!fin.eof())
 	{
-		if(fin.peek() == '\n')rows++;
-		else if(rows == 1)cols++;
+		
 		if(temp == 'X' || temp == '-')
 		{
-			S.push_back(temp); //read in status
-			C.push_back(-1); //initialize count of Adjcells
+			if(fin.peek() == '\n')rows++;
+			else if(rows == 1)cols++;
+			tempS.push_back(temp); //read in status 
 		}else cout << "Invalid input = " << temp << endl;
 		fin >> temp;
+		i++;
+	}
+	fin.close();
+	if(cols*rows >8){
+	int C[rows*cols];
+	char S[rows*cols];
+	for(j=0; j<rows*cols; j++)
+	{
+		C[j]=-1;
+		S[j]= tempS[j];
+		
 	}
 	
+	tempS.clear();
+	
+	fout << "Initial step" << endl;
+	for(i = 0; i < rows; i++)
+			{
+					
+					for(j = 0; j<cols; j++)
+					{   
+						
+						
+						fout << S[i*cols+j];
+					}
+					fout << endl;
+			}
+	fout << endl;
+		fout << endl;
 	char *A;
 	int *B;
-	cudaMalloc(&A, rows*cols*(sizeof(char)));
-	cudaMalloc(&B, rows*cols*(sizeof(int)));//allocates bytes from device heap and returns pointer to allocated memory or null
-	for(i = 0; i < rows; i++)
-	{
-			for(j = 0; j<cols; j++)
-			{   
-				cudaMemcpy(&A[i*cols+j], &S[i*cols+j], sizeof(char), cudaMemcpyHostToDevice);
-				cudaMemcpy(&B[i*cols+j], &C[i*cols+j], sizeof(int), cudaMemcpyHostToDevice);
-			}
-	}
+	cudaMalloc((void** ) &A, rows*cols*(sizeof(char)));
+	cudaMalloc((void** ) &B, rows*cols*(sizeof(int)));//allocates bytes from device heap and returns pointer to allocated memory or null
+	cudaMemcpy(A, S, rows*cols*sizeof(char), cudaMemcpyHostToDevice);
+	cudaMemcpy(B, C, rows*cols*sizeof(int), cudaMemcpyHostToDevice);
+	
 	int l = 0;
-	while(l< 5){
+	while(l < iterations){
  //     <<<number of blocks, number of threads per block>>>
-	callCheck<<<cols*rows/THREADS_PER_BLOCK+1,THREADS_PER_BLOCK>>>(rows, cols, A, B); // one block of rows*cols threads
+	if(rows*cols < THREADS_PER_BLOCK)callCheck<<<1,rows*cols>>>(rows, cols, A, B); // one block of rows*cols threads
+	else callCheck<<<cols*rows/THREADS_PER_BLOCK,THREADS_PER_BLOCK>>>(rows,cols,A,B);
 	cudaDeviceSynchronize();
+	cudaMemcpy(S, A, rows*cols*sizeof(char), cudaMemcpyDeviceToHost);
+	cudaMemcpy(C, B, rows*cols*sizeof(int), cudaMemcpyDeviceToHost);
+	if(printAll == true || l == iterations-1)
+	{
+		fout << "Step " << l+1 << endl;
 	for(i = 0; i < rows; i++)
 		{
 				
 				for(j = 0; j<cols; j++)
 				{   
-					
-					cudaMemcpy(&S[i*cols+j], &A[i*cols+j], sizeof(char), cudaMemcpyDeviceToHost);
-					cudaMemcpy(&C[i*cols+j], &B[i*cols+j], sizeof(int), cudaMemcpyDeviceToHost);
 					fout << S[i*cols+j];
 				}
 				fout << endl;
 		}
 	fout << endl;
 	fout << endl;
+	}
 	l++;
 	}
 	cudaFree(A);
 	cudaFree(B);
+	fout.close();
 	cout << "All Done";
+	}else cout <<"Matrix must be at least 9 elements";
+	}else cout<< "Could not find the input file please try running again with valid file";
 	cin.get();
 
 }
