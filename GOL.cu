@@ -77,12 +77,16 @@ int main(int argc, char *argv[])
 	fout.open("output.txt");
 	i=0;
 	fin >> temp;
+	int totalcount = 0; //total number of elements
 	while(!fin.eof())
 	{
-		
+		totalcount++;
 		if(temp == 'X' || temp == '-')
 		{
-			if(fin.peek() == '\n')rows++;
+			if(fin.peek() == '\n')
+				{
+				rows++;
+				}
 			else if(rows == 1)cols++;
 			tempS.push_back(temp); //read in status 
 		}else cout << "Invalid input = " << temp << endl;
@@ -91,6 +95,7 @@ int main(int argc, char *argv[])
 	}
 	fin.close();
 	if(cols*rows >8){
+		if(totalcount== rows*cols){
 	int C[rows*cols];
 	char S[rows*cols];
 	for(j=0; j<rows*cols; j++)
@@ -152,6 +157,7 @@ int main(int argc, char *argv[])
 	cudaFree(B);
 	fout.close();
 	cout << "All Done";
+		}else cout << "Matrix is not even";
 	}else cout <<"Matrix must be at least 9 elements";
 	}else cout<< "Could not find the input file please try running again with valid file";
 	cin.get();
