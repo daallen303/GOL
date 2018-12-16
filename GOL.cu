@@ -19,7 +19,7 @@ void callCheck(int rows, int cols,char A[])
 	count = 0;
 	for(k = iIndex-1; k <= iIndex+1; k++)
 	{
-		for (j = jIndex-1; j <= jIndex+1; j++) //Each line ends with newline character \n (Unix formatting)
+	    for (j = jIndex-1; j <= jIndex+1; j++) //Each line ends with newline character \n (Unix formatting)
 		{
 			// k<0 j >0 can't have negative index
 			//k>rows j > cols can't have index larger than array Max
@@ -94,9 +94,9 @@ int main(int argc, char *argv[])
 	
 	int Array_size = cols*rows;
 	if(Array_size >8){
-	if(totalcount== rows*cols){
-	char S[rows*cols];
-	for(j=0; j<rows*cols; j++)
+	if(totalcount== Array_size){
+	char S[Array_size];
+	for(j=0; j<Array_size; j++)
 	{
 		S[j]= tempS[j];
 	}
@@ -124,20 +124,20 @@ int main(int argc, char *argv[])
 		   if (Array_size%i == 0) GD = i;//find greatest denominator of Array_size < THREADS_PER_BLOCK
 		   i++;
 		}
-	cudaMalloc((void** ) &A, rows*cols*(sizeof(char)));	//allocates bytes from device heap and returns pointer to allocated memory or null
-	cudaMemcpy(A, S, rows*cols*sizeof(char), cudaMemcpyHostToDevice);
+	cudaMalloc((void** ) &A, Array_size*(sizeof(char)));	//allocates bytes from device heap and returns pointer to allocated memory or null
+	cudaMemcpy(A, S, Array_size*sizeof(char), cudaMemcpyHostToDevice);
 	//cout << Array_size%(Array_size/(THREADS_PER_BLOCK-(Array_size%THREADS_PER_BLOCK))) << endl;
 	//cout << THREADS_PER_BLOCK%(Array_size/(THREADS_PER_BLOCK-(Array_size%THREADS_PER_BLOCK))) << endl;
 	int l = 0;
 	while(l < iterations){
-    //     <<<number of blocks, number of threads per block>>>
+	//	<<<number of blocks, number of threads per block>>>
 	callCheck<<<Array_size/GD,GD>>>(rows,cols,A);
 	//callCheck<<<(Array_size+THREADS_PER_BLOCK-1)/THREADS_PER_BLOCK, THREADS_PER_BLOCK>>>(rows,cols,A); I get memcheck errors using this
 	cudaDeviceSynchronize();
 	
 	if(printAll == true || l == iterations-1)
 	{
-		cudaMemcpy(S, A, rows*cols*sizeof(char), cudaMemcpyDeviceToHost);
+		cudaMemcpy(S, A, Array_size*sizeof(char), cudaMemcpyDeviceToHost);
 		fout << "Step " << l+1 << endl;
 	for(i = 0; i < rows; i++)
 		{
