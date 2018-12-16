@@ -174,6 +174,7 @@ int main(int argc, char *argv[])
 	l++;
 	}
 	cudaFree(A);
+	cudaFree(B);
 	fout.close();
 	cout << "All Done";
 		}else cout << "Matrix is not even";
