@@ -8,8 +8,23 @@ using namespace std;
 
 const int THREADS_PER_BLOCK = 512;
 
+__global__ 
+void setStatus(char A[], int B[])
+{
+	int i;
+	i = blockIdx.x * blockDim.x + threadIdx.x;
+if(A[i] == 'X') //check if it's alive
+	{
+	if(B[i] < 2) A[i] = '-';//dead less than 2 living neighbours
+	else if(B[i] <= 3) A[i] = 'X'; //do nothing status is already alive
+	else A[i] = '-';//dead greater than 3 living neighbours
+	}else{ //dead cell
+			if(B[i] == 3) A[i] = 'X';// dead to alive
+}
+}
+
 __global__
-void callCheck(int rows, int cols,char A[])
+void callCheck(int rows, int cols,char A[], int B[])
 {
 	int i, k, j, count, iIndex, jIndex;
     i = blockIdx.x * blockDim.x + threadIdx.x;
@@ -32,15 +47,12 @@ void callCheck(int rows, int cols,char A[])
 			if (A[rowIndex*cols+colIndex] == 'X' && (rowIndex*cols+colIndex!= i)) count++;
 		}
 	}
-	if(A[i] == 'X') //check if it's alive
-	{
-	if(count < 2) A[i] = '-';//dead less than 2 living neighbours
-	else if(count <= 3) A[i] = 'X'; //do nothing status is already alive
-	else A[i] = '-';//dead greater than 3 living neighbours
-	}else{ //dead cell
-			if(count == 3) A[i] = 'X';// dead to alive
-	}
-}	
+	B[i] = count;
+	
+}
+
+
+	
 
 int main(int argc, char *argv[])
 {
@@ -117,6 +129,7 @@ int main(int argc, char *argv[])
 	fout << endl;
 	
 	char *A;
+	int *B;
 	int GD;
 	i=1;
 	while(i <= THREADS_PER_BLOCK)
@@ -124,32 +137,39 @@ int main(int argc, char *argv[])
 		   if (Array_size%i == 0) GD = i;//find greatest denominator of Array_size < THREADS_PER_BLOCK
 		   i++;
 		}
-	cudaMalloc((void** ) &A, Array_size*(sizeof(char)));	//allocates bytes from device heap and returns pointer to allocated memory or null
+	cout << Array_size << " Asize " << GD << " GD " << Array_size/GD << " Array size / GD" <<endl;
+	cout << "row " << rows << " cols " << cols << endl;
+	
+	cudaMalloc((void** ) &A, Array_size*(sizeof(char)));
+	cudaMalloc((void** ) &B, Array_size*(sizeof(int)));//allocates bytes from device heap and returns pointer to allocated memory or null
 	cudaMemcpy(A, S, Array_size*sizeof(char), cudaMemcpyHostToDevice);
 	//cout << Array_size%(Array_size/(THREADS_PER_BLOCK-(Array_size%THREADS_PER_BLOCK))) << endl;
 	//cout << THREADS_PER_BLOCK%(Array_size/(THREADS_PER_BLOCK-(Array_size%THREADS_PER_BLOCK))) << endl;
 	int l = 0;
 	while(l < iterations){
 	//	<<<number of blocks, number of threads per block>>>
-	callCheck<<<Array_size/GD,GD>>>(rows,cols,A);
+	callCheck<<<Array_size/GD,GD>>>(rows,cols,A, B);
+	setStatus<<<Array_size/GD,GD>>>(A, B);
 	//callCheck<<<(Array_size+THREADS_PER_BLOCK-1)/THREADS_PER_BLOCK, THREADS_PER_BLOCK>>>(rows,cols,A); I get memcheck errors using this
-	cudaDeviceSynchronize();
+	
 	
 	if(printAll == true || l == iterations-1)
 	{
+		cudaDeviceSynchronize();
 		cudaMemcpy(S, A, Array_size*sizeof(char), cudaMemcpyDeviceToHost);
-		fout << "Step " << l+1 << endl;
+		//fout << "Step " << l+1 << endl;
 	for(i = 0; i < rows; i++)
 		{
 				
 			for(j = 0; j<cols; j++)
 			{   
-				fout << S[i*cols+j];
+				cout << S[i*cols+j];
 			}
-			fout << endl;
+			cout << endl;
 		}
-	    fout << endl;
-	    fout << endl;
+	    //fout << endl;
+	    //fout << endl;
+	    //usleep(2500);
 	}
 	l++;
 	}
