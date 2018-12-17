@@ -3,6 +3,7 @@
 #include <vector>
 #include <stdlib.h>
 #include <string>
+#include <unistd.h>
 
 using namespace std;
 
@@ -13,14 +14,26 @@ void setStatus(char A[], int B[])
 {
 	int i;
 	i = blockIdx.x * blockDim.x + threadIdx.x;
-if(A[i] == 'X') //check if it's alive
+	if(A[i] == 'X') //check if it's alive
 	{
-	if(B[i] < 2) A[i] = '-';//dead less than 2 living neighbours
-	else if(B[i] <= 3) A[i] = 'X'; //do nothing status is already alive
-	else A[i] = '-';//dead greater than 3 living neighbours
+		if(B[i] < 2)
+		{
+			A[i] = '-';//dead less than 2 living neighbours
+		}
+		else if(B[i] <= 3)
+		{
+			A[i] = 'X'; //do nothing status is already alive
+		}
+		else 
+		{
+			A[i] = '-';//dead greater than 3 living neighbours
+		}
 	}else{ //dead cell
-			if(B[i] == 3) A[i] = 'X';// dead to alive
-}
+			if(B[i] == 3)
+			{
+				A[i] = 'X';// dead to alive
+			}
+		  }
 }
 
 __global__
@@ -32,19 +45,42 @@ void callCheck(int rows, int cols,char A[], int B[])
 	iIndex = i/cols; //row index
 	jIndex = i%cols; // col index
 	count = 0;
+	
 	for(k = iIndex-1; k <= iIndex+1; k++)
 	{
 	    for (j = jIndex-1; j <= jIndex+1; j++) //Each line ends with newline character \n (Unix formatting)
 		{
 			// k<0 j >0 can't have negative index
 			//k>rows j > cols can't have index larger than array Max
-			if(k<0) rowIndex = rows-1;
-			else if(k>=rows)rowIndex = 0;
-			else rowIndex = k;
-			if(j<0) colIndex = cols-1;
-			else if(j>=cols) colIndex = 0;
-			else colIndex = j;
-			if (A[rowIndex*cols+colIndex] == 'X' && (rowIndex*cols+colIndex!= i)) count++;
+	    	
+			if(k<0)
+			{
+				rowIndex = rows-1;
+			}
+			else if(k>=rows)
+			{
+				rowIndex = 0;
+			}
+			else
+			{
+				rowIndex = k;
+			}
+			if(j<0)
+			{
+				colIndex = cols-1;
+			}
+			else if(j>=cols)
+			{
+				colIndex = 0;
+			}
+			else
+			{
+				colIndex = j;
+			}
+			if (A[rowIndex*cols+colIndex] == 'X' && (rowIndex*cols+colIndex!= i))
+			{
+				count++;
+			}
 		}
 	}
 	B[i] = count;
@@ -70,8 +106,14 @@ int main(int argc, char *argv[])
 	
 	while(opts < argc)
 	{
-		if(string(argv[opts]) == "-i") iterations = strtol(argv[opts+1], NULL, 10);
-		if(string(argv[opts]) == "-v") printAll = true;
+		if(string(argv[opts]) == "-i")
+		{
+			iterations = strtol(argv[opts+1], NULL, 10);
+		}
+		if(string(argv[opts]) == "-v")
+		{
+			printAll = true;
+		}
 		if(opts == argc-1)
 		{
 			string ext;
@@ -83,31 +125,52 @@ int main(int argc, char *argv[])
 	}
 	
 	fin.open(input.c_str());
-	if(fin){
+	if(!fin)
+	{
+		cout<< "Could not find the input file please try running again with valid file";
+		exit(1);
+	}
 	fout.open("output.txt");
 	i=0;
 	fin >> temp;
-	int totalcount = 0; //total number of elements
+	int totalcount = 0;//total number of elements
+	
 	while(!fin.eof())
 	{
 		totalcount++;
 		if(temp == 'X' || temp == '-')
 		{
 			if(fin.peek() == '\n')
-				{
-				   rows++;
-				}else if(rows == 1)cols++;
+			{
+				rows++;
+			}else if(rows == 1)
+			{
+				cols++;
+			}
 		tempS.push_back(temp); //read in status 
-		}else cout << "Invalid input = " << temp << endl;
+		}else
+		{
+			cout << "Invalid input = " << temp << endl;
+		}
 		fin >> temp;
 		i++;
 	}
 	fin.close();
 	
 	int Array_size = cols*rows;
-	if(Array_size >8){
-	if(totalcount== Array_size){
+	
+	if(Array_size <= 8)
+	{
+		cout <<"Matrix must be at least 9 elements";
+		exit(1);
+	}
+	if(totalcount != Array_size)
+	{
+		cout << "Matrix is not even";
+		exit(1);
+	}
 	char S[Array_size];
+	
 	for(j=0; j<Array_size; j++)
 	{
 		S[j]= tempS[j];
@@ -132,6 +195,7 @@ int main(int argc, char *argv[])
 	int *B;
 	int GD;
 	i=1;
+	
 	while(i <= THREADS_PER_BLOCK)
 		{
 		   if (Array_size%i == 0) GD = i;//find greatest denominator of Array_size < THREADS_PER_BLOCK
@@ -143,11 +207,10 @@ int main(int argc, char *argv[])
 	cudaMalloc((void** ) &A, Array_size*(sizeof(char)));
 	cudaMalloc((void** ) &B, Array_size*(sizeof(int)));//allocates bytes from device heap and returns pointer to allocated memory or null
 	cudaMemcpy(A, S, Array_size*sizeof(char), cudaMemcpyHostToDevice);
-	//cout << Array_size%(Array_size/(THREADS_PER_BLOCK-(Array_size%THREADS_PER_BLOCK))) << endl;
-	//cout << THREADS_PER_BLOCK%(Array_size/(THREADS_PER_BLOCK-(Array_size%THREADS_PER_BLOCK))) << endl;
+	
 	int l = 0;
 	while(l < iterations){
-	//	<<<number of blocks, number of threads per block>>>
+
 	callCheck<<<Array_size/GD,GD>>>(rows,cols,A, B);
 	setStatus<<<Array_size/GD,GD>>>(A, B);
 	//callCheck<<<(Array_size+THREADS_PER_BLOCK-1)/THREADS_PER_BLOCK, THREADS_PER_BLOCK>>>(rows,cols,A); I get memcheck errors using this
@@ -157,7 +220,7 @@ int main(int argc, char *argv[])
 	{
 		cudaDeviceSynchronize();
 		cudaMemcpy(S, A, Array_size*sizeof(char), cudaMemcpyDeviceToHost);
-		//fout << "Step " << l+1 << endl;
+		printf("\033[2J\033[H");
 	for(i = 0; i < rows; i++)
 		{
 				
@@ -167,20 +230,14 @@ int main(int argc, char *argv[])
 			}
 			cout << endl;
 		}
-	    //fout << endl;
-	    //fout << endl;
-	    //usleep(2500);
+	   // usleep(2500);
 	}
 	l++;
 	}
 	cudaFree(A);
 	cudaFree(B);
-	fout.close();
-	cout << "All Done";
-		}else cout << "Matrix is not even";
-	}else cout <<"Matrix must be at least 9 elements";
-	}else cout<< "Could not find the input file please try running again with valid file";
-	cin.get();
+	
+	return 0;
 
 }
 
