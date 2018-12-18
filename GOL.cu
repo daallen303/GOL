@@ -187,26 +187,28 @@ int main(int argc, char *argv[])
 	i=1;
 	
 	while(i <= THREADS_PER_BLOCK)
-		{
-		   if (Array_size%i == 0) GD = i;	//find greatest denominator of Array_size < THREADS_PER_BLOCK
+	{
+		if (Array_size%i == 0)
+			{
+			GD = i;	//find greatest denominator of Array_size < THREADS_PER_BLOCK
+			}
 		   i++;
-		}
-	cout << Array_size << " Asize " << GD << " GD " << Array_size/GD << " Array size / GD" <<endl;
-	cout << "row " << rows << " cols " << cols << endl;
+	}
 	
 	cudaMalloc((void** ) &A, Array_size*(sizeof(char)));
 	cudaMalloc((void** ) &B, Array_size*(sizeof(int)));	//allocates bytes from device heap and returns pointer to allocated memory or null
 	cudaMemcpy(A, S, Array_size*sizeof(char), cudaMemcpyHostToDevice);
 	
 	int l = 0;
-	while(l < iterations){
-
-	callCheck<<<Array_size/GD,GD>>>(rows,cols,A, B);
-	setStatus<<<Array_size/GD,GD>>>(A, B);
-	
-	
-	if(printAll == true || l == iterations-1)
+	while(l < iterations)
 	{
+
+		callCheck<<<Array_size/GD,GD>>>(rows,cols,A, B);
+		setStatus<<<Array_size/GD,GD>>>(A, B);
+	
+	
+		if(printAll == true || l == iterations-1)
+		{
 			cudaDeviceSynchronize();
 			cudaMemcpy(S, A, Array_size*sizeof(char), cudaMemcpyDeviceToHost);
 			printf("\033[2J\033[H");
@@ -219,7 +221,6 @@ int main(int argc, char *argv[])
 				}
 				cout << endl;
 			}
-	   // usleep(2500);
 		}
 		l++;
 	}
