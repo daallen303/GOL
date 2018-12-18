@@ -50,8 +50,8 @@ void callCheck(int rows, int cols,char A[], int B[])
 	{
 	    for (j = jIndex-1; j <= jIndex+1; j++) //Each line ends with newline character \n (Unix formatting)
 		{
-			// k<0 j >0 can't have negative index
-			//k>rows j > cols can't have index larger than array Max
+			// k < 0 j >0 can't have negative index
+			//k > rows j > cols can't have index larger than array Max
 	    	
 			if(k<0)
 			{
@@ -133,7 +133,7 @@ int main(int argc, char *argv[])
 	fout.open("output.txt");
 	i=0;
 	fin >> temp;
-	int totalcount = 0;//total number of elements
+	int totalcount = 0;   //total number of elements
 	
 	while(!fin.eof())
 	{
@@ -213,7 +213,6 @@ int main(int argc, char *argv[])
 
 	callCheck<<<Array_size/GD,GD>>>(rows,cols,A, B);
 	setStatus<<<Array_size/GD,GD>>>(A, B);
-	//callCheck<<<(Array_size+THREADS_PER_BLOCK-1)/THREADS_PER_BLOCK, THREADS_PER_BLOCK>>>(rows,cols,A); I get memcheck errors using this
 	
 	
 	if(printAll == true || l == iterations-1)
