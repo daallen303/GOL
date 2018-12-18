@@ -28,20 +28,22 @@ void setStatus(char A[], int B[])
 		{
 			A[i] = '-';//dead greater than 3 living neighbours
 		}
-	}else{ //dead cell
-			if(B[i] == 3)
-			{
-				A[i] = 'X';// dead to alive
-			}
-		  }
+	}
+	else
+	{ //dead cell
+		if(B[i] == 3)
+		{
+			A[i] = 'X';// dead to alive
+		}
+	}
 }
 
 __global__
 void callCheck(int rows, int cols,char A[], int B[])
 {
 	int i, k, j, count, iIndex, jIndex;
-    i = blockIdx.x * blockDim.x + threadIdx.x;
-    int rowIndex, colIndex;//index of current thread
+	i = blockIdx.x * blockDim.x + threadIdx.x;
+	int rowIndex, colIndex;//index of current thread
 	iIndex = i/cols; //row index
 	jIndex = i%cols; // col index
 	count = 0;
@@ -148,7 +150,8 @@ int main(int argc, char *argv[])
 				cols++;
 			}
 		tempS.push_back(temp); //read in status 
-		}else
+		}
+		else
 		{
 			cout << "Invalid input = " << temp << endl;
 		}
@@ -177,20 +180,7 @@ int main(int argc, char *argv[])
 	}
 	
 	tempS.clear();
-	
-	fout << "Initial step" << endl;
-	for(i = 0; i < rows; i++)
-		{
-					
-			for(j = 0; j<cols; j++)
-			{   
-				fout << S[i*cols+j];
-			}
-			fout << endl;
-		}
-	fout << endl;
-	fout << endl;
-	
+
 	char *A;
 	int *B;
 	int GD;
@@ -198,14 +188,14 @@ int main(int argc, char *argv[])
 	
 	while(i <= THREADS_PER_BLOCK)
 		{
-		   if (Array_size%i == 0) GD = i;//find greatest denominator of Array_size < THREADS_PER_BLOCK
+		   if (Array_size%i == 0) GD = i;	//find greatest denominator of Array_size < THREADS_PER_BLOCK
 		   i++;
 		}
 	cout << Array_size << " Asize " << GD << " GD " << Array_size/GD << " Array size / GD" <<endl;
 	cout << "row " << rows << " cols " << cols << endl;
 	
 	cudaMalloc((void** ) &A, Array_size*(sizeof(char)));
-	cudaMalloc((void** ) &B, Array_size*(sizeof(int)));//allocates bytes from device heap and returns pointer to allocated memory or null
+	cudaMalloc((void** ) &B, Array_size*(sizeof(int)));	//allocates bytes from device heap and returns pointer to allocated memory or null
 	cudaMemcpy(A, S, Array_size*sizeof(char), cudaMemcpyHostToDevice);
 	
 	int l = 0;
@@ -217,21 +207,21 @@ int main(int argc, char *argv[])
 	
 	if(printAll == true || l == iterations-1)
 	{
-		cudaDeviceSynchronize();
-		cudaMemcpy(S, A, Array_size*sizeof(char), cudaMemcpyDeviceToHost);
-		printf("\033[2J\033[H");
-	for(i = 0; i < rows; i++)
-		{
+			cudaDeviceSynchronize();
+			cudaMemcpy(S, A, Array_size*sizeof(char), cudaMemcpyDeviceToHost);
+			printf("\033[2J\033[H");
+			for(i = 0; i < rows; i++)
+			{
 				
-			for(j = 0; j<cols; j++)
-			{   
-				cout << S[i*cols+j];
+				for(j = 0; j<cols; j++)
+				{   
+					cout << S[i*cols+j];
+				}
+				cout << endl;
 			}
-			cout << endl;
-		}
 	   // usleep(2500);
-	}
-	l++;
+		}
+		l++;
 	}
 	cudaFree(A);
 	cudaFree(B);
